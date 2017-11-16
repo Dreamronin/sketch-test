@@ -1,12 +1,13 @@
 body {
-  background-color: lightgray;
+  background-image:url(../img/dust_scratches.png);
 }
 
 .container {
   background-color: white;
+  border: 1px solid black;
   line-height: 0;
   margin: auto;
-  width: 960px;
+  width: 700px;
 }
 
 

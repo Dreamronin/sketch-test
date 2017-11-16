@@ -4,7 +4,8 @@ $(function () {
   pixNum = 16;
   //Setup Pixel Dimension
   function pixDim() {
-    return 960 / pixNum + 'px';
+    let dimension = $(container).width();
+    return dimension / pixNum + 'px';
   }
   //Draws Pixels
   function pixDraw() {
@@ -27,7 +28,16 @@ $(function () {
   //  Button
   $('#reset').click(function () {
     container.empty();
-    pixNum = window.prompt('How many pixels?', 16);
+    let enterpix = function () {
+      let pixels = window.prompt('How many pixels?', 16);
+      if ($.isNumeric(pixels)) {
+        pixNum = pixels;
+      } else {
+        window.alert('Please enter a number');
+        enterpix();
+      }
+    };
+    enterpix();
     pixDim();
     pixDraw();
     pencil();
