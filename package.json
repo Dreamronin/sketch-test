@@ -1,0 +1,12 @@
+{
+  "name": "sketch-test",
+  "version": "1.0.0",
+  "description": "Second project for \"The Odin Project\"",
+  "main": "index.js",
+  "repository": "https://github.com/Dreamronin/sketch-test.git",
+  "author": "Jerry Jones <nevermore.jones@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
