@@ -6,17 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sketch-a-Etch</title>
   <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <div class="button-box">
-    <button class="button" id="reset" type="button">Reset</button>
+  <div class="btn-box">
+    <div class="btn-group btn-group-lg">
+      <button class="btn btn-reset" id="reset" type="button">Reset</button>
+      <button class="btn btn-black" id="inkBlack" type="button">Black</button>
+      <button class="btn btn-random" id="inkColor" type="button">
+        <div class="random-text">
+          <span style="color: red">R</span>
+          <span style="color: orange">a</span>
+          <span style="color: green">n</span>
+          <span style="color: blue">d</span>
+          <span style="color: indigo">o</span>
+          <span style="color: violet">m</span>
+        </div>
+      </button>
+    </div>
   </div>
-  <div class="container" id="container"></div>
+  <div class="sketch-outer">
+    <div class="sketch-inner" id="sketchBox"></div>
+  </div>
 </body>
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="js/main.js"></script>
 
 </html>

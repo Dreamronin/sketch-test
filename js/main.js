@@ -1,33 +1,29 @@
 $(function () {
-  var container = $('#container');
+  var drawpad = $('#sketchBox');
+  var padWidth = $(drawpad).width();
   var pixNum = 0;
+  //initialize pixels at 16x16
   pixNum = 16;
-  //Setup Pixel Dimension
+  //Calculate pixel dimensions
   function pixDim() {
-    let dimension = $(container).width();
-    return dimension / pixNum + 'px';
+    return padWidth / pixNum + 'px';
   }
-  //Draws Pixels
+  //Draw Pixels in #sketchBox
   function pixDraw() {
     for (let i = 1; i <= pixNum * pixNum; i++) {
-      container.append('<div class="pixel"></div>');
+      drawpad.append('<div class="pixel"></div>');
     }
     $('.pixel').css({
       'height': pixDim(),
       'width': pixDim()
     });
   }
-  //Setup Pencil
-  function pencil() {
-    $('.pixel').mouseenter(function () {
-      $(this).css('background-color', 'black');
-    });
-  }
+
   pixDraw();
-  pencil();
-  //  Button
+
+  //Buttons
   $('#reset').click(function () {
-    container.empty();
+    drawpad.empty();
     let enterpix = function () {
       let pixels = window.prompt('How many pixels?', 16);
       if ($.isNumeric(pixels)) {
@@ -40,6 +36,20 @@ $(function () {
     enterpix();
     pixDim();
     pixDraw();
-    pencil();
+  });
+
+  $('#inkBlack').click(function () {
+    $('.pixel').mouseenter(function () {
+      $(this).css('background-color', 'black');
+    });
+  });
+
+  $('#inkColor').click(function () {
+    $('.pixel').mouseenter(function () {
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      $(this).css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')');
+    });
   });
 });

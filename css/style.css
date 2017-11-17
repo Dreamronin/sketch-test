@@ -1,32 +1,51 @@
 body {
-  background-image:url(../img/dust_scratches.png);
+  background-image: url(../img/dust_scratches.png);
 }
 
-.container {
+/*Button Style*/
+
+.btn-box {
+  margin: 30px auto 30px auto;
+  width: 37%;
+}
+
+.btn-reset {
+  background-color: rgb(255, 255, 255);
+  color: red;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+.btn-random {
+  background-color: #ffffff;
+}
+
+.random-text {
+  display: inline-flex;
+}
+
+/*Sketch Box Style*/
+
+.sketch-outer {
+  background-color: #5b5b5b;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.sketch-inner {
   background-color: white;
-  border: 1px solid black;
+  height: 700px;
   line-height: 0;
   margin: auto;
   width: 700px;
 }
 
-
-.button-box {
-  margin-bottom: 30px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-.button {
-  background-color: rgb(255, 54, 54);
-  color: black;
-  font-family: monospace, sans-serif;
-  font-size: 2em;
-  height: 50px;
-  width: 150px;
-
-}
+/*Pixel Style*/
 
 .pixel {
-  display: inline-block;
+  display:inline-block;
 }
